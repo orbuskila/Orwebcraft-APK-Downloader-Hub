@@ -1,0 +1,7 @@
+google-play-scraper==1.2.4
+requests==2.31.0
+google-generativeai==0.3.2
+googlesearch-python==1.2.4
+python-dotenv==1.0.0
+beautifulsoup4==4.12.2
+click==8.1.7
