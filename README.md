@@ -2,6 +2,9 @@
 Orwebcraft APK Downloader Hub
 # ⚙️ Orwebcraft APK Downloader Hub
 
+
+[check the app on Google AI Studio](https://ai.studio/apps/drive/15LEvrc9K4jhO1lfBq6e8g1BSZFEAut6C)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Issues](https://img.shields.io/github/issues/your-username/orwebcraft-apk-downloader-hub.svg)](https://github.com/your-username/orwebcraft-apk-downloader-hub/issues)
 
@@ -67,5 +70,4 @@ To download the latest version of an app:
 ```sh
 python main.py download --package "com.example.app"
 
-check the app on google ai studio
-https://ai.studio/apps/drive/15LEvrc9K4jhO1lfBq6e8g1BSZFEAut6C
+
