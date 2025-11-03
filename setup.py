@@ -23,7 +23,6 @@ setup(
         "google-generativeai>=0.3.2",
         "googlesearch-python>=1.2.4",
         "python-dotenv>=1.0.0",
-        "beautifulsoup4>=4.12.2",
         "click>=8.1.7",
     ],
     entry_points={
