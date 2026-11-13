@@ -1,0 +1,10 @@
+(function(){'use strict';
+const api=window.owcDiscovery;if(!api)return;
+const app=document.querySelector('[data-owc-app]');if(app)fetch(api.url+'view/'+app.dataset.owcApp,{method:'POST',credentials:'same-origin'}).catch(()=>{});
+document.addEventListener('click',async function(e){const b=e.target.closest('[data-owc-toggle],[data-owc-add],[data-owc-remove]');if(!b)return;
+const group=b.closest('.owc-user-actions')||b.closest('section');const status=group.querySelector('.owc-action-status');
+const kind=b.dataset.owcToggle||'collection';const input=group.querySelector('[data-owc-collection]');const name=b.dataset.owcRemove||(input?input.value:'');
+b.disabled=true;try{const r=await fetch(api.url+'save',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','X-WP-Nonce':api.nonce},body:JSON.stringify({id:b.dataset.id,kind:kind,name:name,remove:!!b.dataset.owcRemove})});const data=await r.json();if(!r.ok)throw new Error(data.message||'Save failed');
+if(b.dataset.owcToggle){b.setAttribute('aria-pressed',String(data.active));b.textContent=(data.active?'Remove ':'')+(kind==='favorites'?'Favorite':'Follow updates');}if(b.dataset.owcRemove)b.closest('li').remove();if(status)status.textContent='Saved.';
+}catch(err){if(status)status.textContent=err.message+' Please refresh the page and try again.';}finally{b.disabled=false;}});
+})();
